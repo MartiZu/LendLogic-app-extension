@@ -7,6 +7,14 @@ export default function Newsletter() {
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
+        //  email validation
+        const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputValue);
+
+        if (isValidEmail || inputValue === "") {
+          setEmail(inputValue);
+        } else {
+          alert("Please enter a valid email address");
+        }
   };
 
   const handleSubmit = () => {
