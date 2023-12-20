@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 const UniqueMonthlyPayment = ({ q2, value }) => {
   const {
@@ -9,7 +8,7 @@ const UniqueMonthlyPayment = ({ q2, value }) => {
     userInterestRate,
     mortgageType,
   } = value;
-  const [newLoanLength, setNewLoanLength] = useState(loanLength);
+
   return (
     <p className="py-2 font-normal text-xl">
       {q2 === "a1" ? "Your current mortgage will be repaid in " : null}

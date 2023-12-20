@@ -65,6 +65,8 @@ export default async function Dashboard() {
         <Newsletter />
         {q1 === "a1" && q2 === "a1" ? <Checklist /> : null}
         {q1 === "a1" ? <BuyingHomeTimeline steps={steps} /> : null}
+        {q1 === "a1" ? <NewbuyerQuiz /> : null}
+        {q1 === "a2" ? <RemortgageQuiz /> : null}
       </div>
     </>
   );
