@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import NewBuyerTimeline from "./NewBuyerTimeline";
 
@@ -10,9 +11,12 @@ export default function BuyingHomeTimeline({ steps }) {
   function clickHandler() {
     setToolVisible(!toolVisible);
   }
-  const stepsArr = steps.steps
+  const stepsArr = steps.steps;
+  // console.log("debug buyinghometimeline", stepsArr);
+  // const firstStep = steps.steps[0];
+  // console.log("print first step", firstStep);
+
   const buttonText = toolVisible ? "Hide" : "Find Out More";
-  
   return (
     <>
       <div className="mt-6 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
@@ -30,14 +34,14 @@ export default function BuyingHomeTimeline({ steps }) {
           <div className="flex justify-center">
             <Image
               src="/clap_img.png"
-              alt="A man using toggles"
+              alt="Two people hi-fiving"
               width={300}
               height={200}
             />
           </div>
         )}
         <button
-          className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
+          className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button cursor-pointer"
           type="submit"
           onClick={clickHandler}
         >

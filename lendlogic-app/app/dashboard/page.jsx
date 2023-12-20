@@ -9,6 +9,8 @@ import Checklist from "./newbuyer_components/Checklist";
 import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";
 import GetSteps from "../customHooks/DisplaySteps";
 import ComparisonTool from "./ComparisonTool";
+import Link from "next/link";
+import Image from "next/image";
 
 export default async function Dashboard() {
   async function readCookie(cookieName) {
@@ -34,8 +36,20 @@ export default async function Dashboard() {
 
   return (
     <>
+      <Link href="/questionnaire">
+        <div className="text-purple-accent flex flex-row pl-2 pt-2">
+          <Image
+            src="/arrow_back_ios.svg"
+            width={20}
+            height={20}
+            alt="Back icon"
+            priority={true}
+          />
+          <h1>Back</h1>
+        </div>
+      </Link>
       <div className="flex m-auto flex-col my-8 rounded-3xl text-center text-2xl min-max-width">
-        <h1 className="font-normal pt-7 text-3xl text-purple-accent">
+        <h1 className="font-normal pt-4 text-3xl text-purple-accent">
           We've got your back!
         </h1>
         <p className="px-2 py-4 text-lg">
