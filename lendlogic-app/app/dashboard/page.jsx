@@ -4,6 +4,8 @@ import RemortgageReport from "./remortgage_components/RemortgageReport";
 import DisplayUser from "../customHooks/DisplayUser";
 import DisplayProperties from "../customHooks/DisplayProperties";
 import NewBuyerReport from "./newbuyer_components/NewBuyerReport";
+import NewbuyerQuiz from "./newbuyer_components/NewbuyerQuiz";
+import RemortgageQuiz from "./remortgage_components/RemortgageQuiz";
 import { cookies } from "next/headers";
 import Checklist from "./newbuyer_components/Checklist";
 import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";

@@ -37,7 +37,7 @@ export default function NewBuyerReport({ value, properties }) {
     //to check if the search input contains a space
     const spaceRegex = /\s/;
     if (!spaceRegex.test(searchInput)) {
-      alert("Please enter a valid postcode");
+      alert("Please enter a valid postcode with a space");
     } else {
       //refine search input taking only the first part
       const shortInput = searchInput.split(" ")[0];
@@ -53,9 +53,8 @@ export default function NewBuyerReport({ value, properties }) {
         setPropertyPostcode(findProperty.searchPostcode);
         setSearchInput("");
       } else {
-        console.log("Postcode not found");
         setSearchInput("");
-        alert("Postcode not found");
+        alert("Postcode not found, or wrong postcode inserted");
       }
     }
   };
