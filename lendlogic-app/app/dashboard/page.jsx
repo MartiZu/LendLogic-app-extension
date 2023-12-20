@@ -4,6 +4,8 @@ import RemortgageReport from "./remortgage_components/RemortgageReport";
 import DisplayUser from "../customHooks/DisplayUser";
 import DisplayProperties from "../customHooks/DisplayProperties";
 import NewBuyerReport from "./newbuyer_components/NewBuyerReport";
+import NewbuyerQuiz from "./newbuyer_components/NewbuyerQuiz";
+import RemortgageQuiz from "./remortgage_components/RemortgageQuiz";
 import { cookies } from "next/headers";
 import Checklist from "./newbuyer_components/Checklist";
 import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";
@@ -65,6 +67,8 @@ export default async function Dashboard() {
         <Newsletter />
         {q1 === "a1" && q2 === "a1" ? <Checklist /> : null}
         {q1 === "a1" ? <BuyingHomeTimeline steps={steps} /> : null}
+        {q1 === "a1" ? <NewbuyerQuiz /> : null}
+        {q1 === "a2" ? <RemortgageQuiz /> : null}
       </div>
     </>
   );
