@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+@media (min-width: 800px) {
+  .min-max-width {
+    max-width: 768px;
+    min-width: 768px;
+  }
+  .margin-change {
+    margin: auto;
+  }
+}
+
+body {
+  background: rgb(138, 132, 226);
+  background: linear-gradient(
+    0deg,
+    rgba(138, 132, 226, 1) 0%,
+    rgba(194, 190, 237, 1) 33%,
+    rgba(252, 250, 249, 1) 66%
+  );
+  color: #5e5e5e;
+  height: 100%;
+  background-attachment: fixed;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+#loanTerm,
+#interestRate,
+#monthlySaving,
+#years,
+#months {
+  accent-color: #8a84e2;
+}
