@@ -88,23 +88,24 @@ export default function MortageType({ value, q2 }) {
         </span>{" "}
         left on your fixed term, with a fixed rate of{" "}
         <span className="text-2xl font-bold text-purple-accent">
-          {userInterestRate}%
+          {userInterestRate}%{" "}
         </span>
-        and a remianing balance of{" "}
+        and a remaining balance of{" "}
         <span className="text-2xl font-bold text-purple-accent">
           £{loanAmount}
         </span>
       </p>
       <p className="py-2 font-normal text-xl">
-        The current market avarage interest rate is{" "}
+        The current market average interest rate is{" "}
         {/*hardcoded interest rate*/}
         <span className="text-2xl font-bold text-purple-accent">2.9%</span>
       </p>
       <div className="flex flex-col items-center">
         <p className="py-2 font-normal text-xl">
-          Thinking about an early repayment charge? Enter the repayment
-          percentage number here
+          Thinking about changing mortgage type? 
         </p>
+        <p className="py-2 font-normal text-xl">Enter your repayment
+          charge here</p>
         <div className="flex flex-row w-72 justify-center py-3">
           <input
             type="text"
