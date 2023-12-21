@@ -1,68 +1,79 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function ReleaseEquityTool({ q2, value }) {
-  //destructing the object returned from the custom hook
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
     value;
-  const [monthlyPayment, setMonthlyPayment] = useState(userMonthlyPayment);
-  const [interestRate, setInterestRate] = useState(userInterestRate);
-  const [loanTerm, setLoanTerm] = useState(loanLength);
+
+  const [equity, setEquity] = useState(200000 - loanAmount);
+  const [borrowTime, setBorrowTime] = useState(20);
+  const [monthlyEquityPayment, setMonthlyEquityPayment] = useState(0);
 
   function updateMonthlyPayment() {
-    let newMonthlyPayment = (loanAmount / (loanTerm * 12)) * interestRate;
-    setMonthlyPayment(Math.ceil(newMonthlyPayment));
-    // console.log(monthlyPayment);
+    let payment = Math.floor(equity / borrowTime / 12);
+    setMonthlyEquityPayment(payment);
+    console.log(payment);
+    console.log(equity);
+    console.log(borrowTime);
   }
   return (
     <div className="mt-8 mx-4 text-center text-2xl">
-      {/* <div className="py-4">
-        Your new monthly payment could be{" "}
+      <p className="py-2 font-normal text-xl">
+        Your monthly equity paymment will be{" "}
         <span className="text-2xl font-bold text-purple-accent">
-          {monthlyPayment}
+          £{monthlyEquityPayment}{" "}
         </span>
-      </div>
-      <div className="py-4">
-        Your remaining balance is{" "}
+        on top of your existing payment of{" "}
         <span className="text-2xl font-bold text-purple-accent">
-          £{loanAmount}
+          £{userMonthlyPayment}{" "}
         </span>
-      </div>
-      <div id="toggles" className="flex flex-col items-center">
-        <label className="py-4" htmlFor="interestRate">
-          Interest Rate: {interestRate}%
-        </label>
-        <input
-          data-testid="interestRate"
-          id="interestRate"
-          className="w-1/2"
-          type="range"
-          min="2"
-          max="9"
-          step="0.1"
-          value={interestRate}
-          onChange={(e) => {
-            setInterestRate(e.target.value);
-            updateMonthlyPayment();
-          }}
-        />
-        <label className="py-4" htmlFor="loanTerm">
-          Loan Term: {loanTerm}
-        </label>
-        <input
-          id="loanTerm"
-          className="w-1/2"
-          type="range"
-          min="5"
-          max="35"
-          step="1"
-          value={loanTerm}
-          onChange={(e) => {
-            setLoanTerm(e.target.value);
-            updateMonthlyPayment();
-          }}
-        />
-      </div> */}
+      </p>
+      <p className="py-2 font-normal text-xl">
+        How much would you like to borrow?{" "}
+        <span className="text-2xl font-bold text-purple-accent">
+          £{equity}{" "}
+        </span>
+      </p>
+      <label className="py-4" htmlFor="interestRate">
+        £
+      </label>
+      <input
+        data-testid="interestRate"
+        id="interestRate"
+        className="w-1/2"
+        type="range"
+        min="5000"
+        max="200000"
+        step="1000"
+        value={equity}
+        onChange={(e) => {
+          setEquity(e.target.value);
+          updateMonthlyPayment();
+        }}
+      />
+      <p className="py-2 font-normal text-xl">
+        How long would you like to borrow this equity for?{" "}
+        <span className="text-2xl font-bold text-purple-accent">
+          {borrowTime} years{" "}
+        </span>
+      </p>
+      <label className="py-4" htmlFor="interestRate">
+        £
+      </label>
+      <input
+        data-testid="interestRate"
+        id="interestRate"
+        className="w-1/2"
+        type="range"
+        min="5"
+        max={30}
+        step="1"
+        value={borrowTime}
+        onChange={(e) => {
+          setBorrowTime(e.target.value);
+          updateMonthlyPayment();
+        }}
+      />
     </div>
   );
 }

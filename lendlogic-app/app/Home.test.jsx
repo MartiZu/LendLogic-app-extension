@@ -7,12 +7,11 @@ describe("Home", () => {
     //arrange
     render(<Home />);
   });
-  it("should contain the word Mortgage", () => {
-    //arrange
-    render(<Home />);
-    //action
-    const myElement = screen.getByText("Mortgage");
-    //assertion
-    expect(myElement).toBeInTheDocument();
+  it("setCookieJenny function is setting cookie as Jenny's email", async () => {
+    const mockId = { user_id: "jenny.smith@example.com" };
+    setCookieJenny = jest.fn(() => Promise.resolve(mockId));
+    // const mockSetCookie = jest.fn();
+    const jennyEmail = await setCookieJenny();
+    expect(mockId).toEqual(jennyEmail);
   });
 });

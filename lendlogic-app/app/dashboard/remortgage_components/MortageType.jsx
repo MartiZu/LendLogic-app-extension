@@ -19,13 +19,8 @@ export default function MortageType({ value, q2 }) {
   const handleSearchInputChange = (e) => {
     const input = e.target.value;
     setSearchInput(input);
-    // const isValidNumber = /^[0-9]+$/.test(input);
-    // if (isValidNumber) {
-    //   setSearchInput(input);
-    // } else {
-    //   alert("Please enter a valid number");
-    // }
   };
+  //handle search button click
   const handleSearchButtonClick = () => {
     //ensure that searchInput is a valid number
     const percentage = parseFloat(searchInput);
@@ -102,10 +97,11 @@ export default function MortageType({ value, q2 }) {
       </p>
       <div className="flex flex-col items-center">
         <p className="py-2 font-normal text-xl">
-          Thinking about changing mortgage type? 
+          Thinking about changing mortgage type?
         </p>
-        <p className="py-2 font-normal text-xl">Enter your repayment
-          charge here</p>
+        <p className="py-2 font-normal text-xl">
+          Enter your repayment charge here
+        </p>
         <div className="flex flex-row w-72 justify-center py-3">
           <input
             type="text"
@@ -125,4 +121,3 @@ export default function MortageType({ value, q2 }) {
     </div>
   );
 }
-
