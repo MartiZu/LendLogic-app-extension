@@ -6,33 +6,38 @@ export default function Newsletter() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
-    setEmail(e.target.value);
-        //  email validation
-        const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputValue);
-
-        if (isValidEmail || inputValue === "") {
-          setEmail(inputValue);
-        } else {
-          alert("Please enter a valid email address");
-        }
+    let inputValue = e.target.value;
+    //  email validation
+    setEmail(inputValue);
+    console.log("Input Value:", inputValue);
   };
 
   const handleSubmit = () => {
-    //simulate storing user data
-    console.log("Data submitted", email);
-    //display messafe and reset form
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setEmail("");
-    }, 4000);
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    console.log("Is Valid Email:", isValidEmail);
+    if (isValidEmail) {
+      //simulate storing user data
+      console.log("Data submitted", email);
+      //display messafe and reset form
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setEmail("");
+      }, 4000);
+    } else {
+      alert("Please enter a valid email address");
+    }
   };
 
   return (
     <main>
       <div className="mt-12 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
-        <h2 className="font-normal py-7 text-3xl text-purple-accent">Sign up for our newsletter</h2>
-        <p className="py-2 font-normal text-xl">Did you see something interesting?</p>
+        <h2 className="font-normal py-7 text-3xl text-purple-accent">
+          Sign up for our newsletter
+        </h2>
+        <p className="py-2 font-normal text-xl">
+          Did you see something interesting?
+        </p>
         <p className="py-2 font-normal text-xl">
           Get the latest news and updates from Lendlogic
         </p>
