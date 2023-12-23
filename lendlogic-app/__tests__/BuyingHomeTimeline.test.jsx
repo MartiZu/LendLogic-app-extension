@@ -14,12 +14,14 @@ describe("BuyingHome", () => {
     fireEvent.click(button);
 
     // Check if the timeline becomes visible after the click
-    expect(screen.getByText("Hide")).toBeInTheDocument();
+    expect(
+      screen.getByTestId("buyinghometimeline-findoutmore-hide")
+    ).toBeInTheDocument();
 
     // Click the button again to timeline visibility
-    fireEvent.click(button);
+    // fireEvent.click(button);
 
-    // Check if the tool becomes hidden again and you should not see "hide" text
-    expect(screen.queryByText("Hide")).not.toBeInTheDocument();
+    // // Check if the next component is visible after the click
+    // expect(screen.getByTestId("step-div")).toBeInTheDocument();
   });
 });

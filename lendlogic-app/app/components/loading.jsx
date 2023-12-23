@@ -7,7 +7,7 @@ export default function Loading() {
         </h2>
         <svg data-testid="loading-svg"
           aria-hidden="true"
-          class="w-8 h-8 text-off-white animate-spin mt-3 fill-purple-accent"
+          className="w-8 h-8 text-off-white animate-spin mt-3 fill-purple-accent"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

@@ -22,7 +22,9 @@ describe("Test on the NewBuyerReport component", () => {
     expect(screen.getByText("Find Out More")).toBeInTheDocument();
     expect(screen.getByText(/Your New Buyer Report/i)).toBeInTheDocument();
     // Click on the toggle button
-    fireEvent.click(screen.getByText("Find Out More"));
+    fireEvent.click(screen.getByTestId("newbuyerreport-findoutmore"));
+    // Check if the next component is visible after the click
+    // expect(screen.getByTestId("toggles")).toBeInTheDocument();
   });
   //   it("should search for a property", () => {
   //     render(<NewBuyerReport value={mockValue} properties={mockProperties} />);

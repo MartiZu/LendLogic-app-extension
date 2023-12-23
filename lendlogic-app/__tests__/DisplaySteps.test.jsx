@@ -1,5 +1,6 @@
 import { describe } from "node:test";
 import displaySteps from "../app/customHooks/DisplaySteps";
+import getSteps from "../library/getSteps";
 
 const mockData = [
   {

@@ -1,5 +1,6 @@
 import { describe } from "node:test";
 import displayUser from "../app/customHooks/DisplayUser";
+import getUsers from "../library/getUsers";
 
 const mockData = [
   {
