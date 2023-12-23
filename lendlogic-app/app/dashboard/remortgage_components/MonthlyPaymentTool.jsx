@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 
 export default function MonthlyPaymentTool({ q2, value }) {
@@ -18,7 +19,7 @@ export default function MonthlyPaymentTool({ q2, value }) {
     <div className="mt-8 mx-4 text-center text-2xl">
       <div className="py-4">
         Your new monthly payment could be{" "}
-        <span className="text-2xl font-bold text-purple-accent">
+        <span className="text-2xl font-bold text-purple-accent " data-testid="monthlyPayment">
           {monthlyPayment}
         </span>
       </div>

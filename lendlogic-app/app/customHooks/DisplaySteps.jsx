@@ -1,6 +1,6 @@
 import getSteps from "@/library/getSteps";
 
-export default async function GetSteps() {
+export default async function displaySteps() {
   try {
     const stepsData = await getSteps();
     // console.log(stepsData);

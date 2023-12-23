@@ -44,6 +44,7 @@ export default function LoanLengthTool({ q2, value }) {
           Loan Term: {loanTerm}
         </label>
         <input
+          data-testid="loanTerm"
           id="loanTerm"
           className="w-1/2"
           type="range"

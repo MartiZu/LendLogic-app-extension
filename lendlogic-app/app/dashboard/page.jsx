@@ -1,15 +1,15 @@
 import LearningSection from "./LearningSection";
 import Newsletter from "./Newsletter";
 import RemortgageReport from "./remortgage_components/RemortgageReport";
-import DisplayUser from "../customHooks/DisplayUser";
-import DisplayProperties from "../customHooks/DisplayProperties";
+import displayUser from "../customHooks/DisplayUser";
+import displayProperties from "../customHooks/DisplayProperties";
 import NewBuyerReport from "./newbuyer_components/NewBuyerReport";
 import NewbuyerQuiz from "./newbuyer_components/NewbuyerQuiz";
 import RemortgageQuiz from "./remortgage_components/RemortgageQuiz";
 import { cookies } from "next/headers";
 import Checklist from "./newbuyer_components/Checklist";
 import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";
-import GetSteps from "../customHooks/DisplaySteps";
+import displaySteps from "../customHooks/DisplaySteps";
 import ComparisonTool from "./ComparisonTool";
 import Link from "next/link";
 import Image from "next/image";
@@ -26,14 +26,14 @@ export default async function Dashboard() {
 
   // await new Promise((resolve) => setTimeout(resolve, 1000));
   //destructing the object returned from the custom hook
-  const currentUser = await DisplayUser(user);
+  const currentUser = await displayUser(user);
   // console.log(currentUser);
 
-  const properties = await DisplayProperties();
+  const properties = await displayProperties();
   // console.log(properties);
   // read cookies fucntion
 
-  const steps = await GetSteps();
+  const steps = await displaySteps();
   // console.log("debugging on dashboard page stesp", steps);
 
   return (

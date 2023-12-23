@@ -2,7 +2,7 @@
 
 import MonthlyPaymentTool from "./MonthlyPaymentTool";
 import LoanLengthTool from "./LoanLengthTool";
-import MortageType from "./MortageType";
+import MortageType from "./MortgageType";
 import ReleaseEquityTool from "./ReleaseEquityTool";
 
 export default function DisplayMortgageInformation({ q2, value }) {

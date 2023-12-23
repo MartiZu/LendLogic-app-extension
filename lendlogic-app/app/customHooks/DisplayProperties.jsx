@@ -1,6 +1,6 @@
 import getProperties from "@/library/getProperties";
 
-export default async function GetProperties() {
+export default async function displayProperties() {
   try {
     const propertiesData = await getProperties();
     // console.log(propertiesData);

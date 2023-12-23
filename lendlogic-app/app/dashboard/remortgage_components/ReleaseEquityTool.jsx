@@ -18,8 +18,8 @@ export default function ReleaseEquityTool({ q2, value }) {
   }
   return (
     <div className="mt-8 mx-4 text-center text-2xl">
-      <p className="py-2 font-normal text-xl">
-        Your monthly equity paymment will be{" "}
+      <p className="py-2 font-normal text-xl" data-testid="textValue">
+        Your monthly equity payment will be{" "}
         <span className="text-2xl font-bold text-purple-accent">
           £{monthlyEquityPayment}{" "}
         </span>
@@ -30,7 +30,10 @@ export default function ReleaseEquityTool({ q2, value }) {
       </p>
       <p className="py-2 font-normal text-xl">
         How much would you like to borrow?{" "}
-        <span className="text-2xl font-bold text-purple-accent">
+        <span
+          data-testid="equitySpan"
+          className="text-2xl font-bold text-purple-accent"
+        >
           £{equity}{" "}
         </span>
       </p>
@@ -38,7 +41,7 @@ export default function ReleaseEquityTool({ q2, value }) {
         £
       </label>
       <input
-        data-testid="interestRate"
+        data-testid="equityValue"
         id="interestRate"
         className="w-1/2"
         type="range"
@@ -61,7 +64,7 @@ export default function ReleaseEquityTool({ q2, value }) {
         £
       </label>
       <input
-        data-testid="interestRate"
+        data-testid="borrowTime"
         id="interestRate"
         className="w-1/2"
         type="range"
@@ -77,3 +80,4 @@ export default function ReleaseEquityTool({ q2, value }) {
     </div>
   );
 }
+

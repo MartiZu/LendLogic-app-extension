@@ -5,7 +5,7 @@ export default function Loading() {
         <h2 className="text-2xl text-text-primary text-purple-accent">
           Loading
         </h2>
-        <svg
+        <svg data-testid="loading-svg"
           aria-hidden="true"
           class="w-8 h-8 text-off-white animate-spin mt-3 fill-purple-accent"
           viewBox="0 0 100 101"

@@ -1,6 +1,6 @@
 import getNewbuyerQuiz from "@/library/getNewbuyerQuiz";
 
-export default async function GetNewbuyerQuiz() {
+export default async function displayNewbuyerQuiz() {
   try {
     const quizData = await getNewbuyerQuiz();
     // console.log(quizData);

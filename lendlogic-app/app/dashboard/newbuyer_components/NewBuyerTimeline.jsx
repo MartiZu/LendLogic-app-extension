@@ -16,9 +16,9 @@ export default function NewBuyerTimeline({ steps }) {
   };
 
   return (
-    <div className="flex flex-col items-center py-4">
+    <div data-testid="step-div" className="flex flex-col items-center py-4">
       {steps.map((step, index) => (
-        <div
+        <div data-testid="mapped-div"
           key={step.id}
           className={
             seeStep[index]
@@ -29,7 +29,7 @@ export default function NewBuyerTimeline({ steps }) {
         >
           <p className="text-xl">{step.title}</p>
           {seeStep[index] ? (
-            <Step
+            <Step data-testid="step-id"
               key={step.id}
               title={step.title}
               tasks={step.tasks}

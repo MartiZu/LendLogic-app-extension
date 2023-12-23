@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -20,7 +21,7 @@ export default function PreferenceTool({ cookieHandler }) {
     if (num === 99) {
       setTimeout(() => {
         router.push("/dashboard");
-    }, 1000);
+      }, 1000);
     }
     // update the class names
     setCardVisible(false);
@@ -42,7 +43,10 @@ export default function PreferenceTool({ cookieHandler }) {
           }
         >
           <form className="flex flex-col my-5 items-center ">
-            <h2 className="mb-40 text-3xl font-normal text-purple-accent">
+            <h2
+              data-testid="firstquestion"
+              className="mb-40 text-3xl font-normal text-purple-accent"
+            >
               Which of the following best describes you?
             </h2>
             <input
@@ -52,6 +56,7 @@ export default function PreferenceTool({ cookieHandler }) {
               onClick={(e) => handleClick(e, 2, "q1", "a1")}
             ></input>
             <input
+              data-testid="remortgage-button"
               value="Remortgage"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
@@ -81,7 +86,10 @@ export default function PreferenceTool({ cookieHandler }) {
           }
         >
           <form className="flex flex-col my-5 items-center">
-            <h2 className="mb-40 text-3xl font-normal text-purple-accent">
+            <h2
+              data-testid="secondquestion"
+              className="mb-40 text-3xl font-normal text-purple-accent"
+            >
               How comfortable are you with mortgage terminology?
             </h2>
             <input
@@ -131,6 +139,7 @@ export default function PreferenceTool({ cookieHandler }) {
               onClick={(e) => handleClick(e, 99, "q2", "a3")}
             ></input>
             <input
+              data-testid="release-button"
               value="Release equity"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"

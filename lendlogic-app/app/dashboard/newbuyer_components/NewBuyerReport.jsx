@@ -66,7 +66,7 @@ export default function NewBuyerReport({ value, properties }) {
       </h2>
       <p className="py-2 font-normal text-xl">
         We looked at properties around your area you searched for in{" "}
-        <span className="text-2xl font-bold text-purple-accent">
+        <span data-testid="postcode" className="text-2xl font-bold text-purple-accent">
           {propertyPostcode}
         </span>
         . Based on the market value your estimated deposit is{" "}
@@ -98,14 +98,14 @@ export default function NewBuyerReport({ value, properties }) {
               <div className="flex flex-row w-72 justify-center py-3">
                 <input
                   type="text"
-                  placeholder="Enter postcode..."
+                  placeholder="Enter postcode"
                   value={searchInput}
                   onChange={handleSearchInputChange}
-                  className="w-40 h-12 p-2 border rounded-l-full text-xl focus:outline-none"
+                  className="w-44 h-12 pl-4 py-2 border rounded-l-full text-xl focus:outline-none border-purple-accent border-r-0"
                 />
-                <button
+                <button data-testid="search-button"
                   onClick={handleSearchButtonClick}
-                  className="w-24 h-12 bg-purple-accent rounded-r-full text-off-white text-xl font-semibold shadow-button"
+                  className="w-24 h-12 bg-purple-accent rounded-r-full text-off-white text-xl font-semibold shadow-button cursor-pointer"
                 >
                   Search
                 </button>
@@ -114,8 +114,8 @@ export default function NewBuyerReport({ value, properties }) {
           </div>
         )}
       </div>
-      <button
-        className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
+      <button data-testid="newbuyerreport-findoutmore"
+        className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button cursor-pointer"
         onClick={clickHandler}
       >
         {buttonText}

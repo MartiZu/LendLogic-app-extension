@@ -1,6 +1,5 @@
-import Link from "next/link";
-import GetNewbuyerQuiz from "../customHooks/DisplayNewbuyerQuiz";
-import DisplayUser from "../customHooks/DisplayUser";
+import displayNewbuyerQuiz from "../customHooks/DisplayNewbuyerQuiz";
+import displayUser from "../customHooks/DisplayUser";
 import { cookies } from "next/headers";
 import QuizList from "./QuizList";
 
@@ -13,9 +12,9 @@ export default async function QuizHomepage() {
   const q1 = await readCookie("q1");
   const q2 = await readCookie("q2");
 
-  const currentUser = await DisplayUser(user);
+  const currentUser = await displayUser(user);
 
-  const NBQuiz = await GetNewbuyerQuiz();
+  const NBQuiz = await displayNewbuyerQuiz();
   // console.log("quizlist page", NBQuiz);
 
   return (

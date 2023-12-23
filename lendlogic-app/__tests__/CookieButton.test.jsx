@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 //userEvent is an alternative to fireEvent
 import { describe } from "node:test";
 
-import { CookieButton } from "./CookieButton";
+import { CookieButton } from "../app/cookies/CookieButton";
 
 jest.mock("next/navigation", () => ({
   useRouter: () => ({

@@ -1,6 +1,5 @@
 import { describe } from "node:test";
-import displayUser from "./DisplayUser";
-import getUsers from "../../library/getUsers";
+import displayUser from "../app/customHooks/DisplayUser";
 
 const mockData = [
   {
@@ -22,7 +21,7 @@ const mockData = [
   },
 ];
 
-jest.mock("../../library/getUsers");
+jest.mock("../library/getUsers");
 
 describe("DisplayUser", () => {
   it("check output salary", async () => {
