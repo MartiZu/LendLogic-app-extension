@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Step from "./Step";
+import RemortgageStep from "./RemortgageStep";
 
-export default function NewBuyerTimeline({ steps }) {
+export default function RemortgageTimeline({ steps }) {
   const [seeStep, setSeeStep] = useState(new Array(steps.length).fill(false));
   console.log(seeStep);
 
@@ -16,9 +16,9 @@ export default function NewBuyerTimeline({ steps }) {
   };
 
   return (
-    <div data-testid="step-div" className="flex flex-col items-center py-4">
+    <div data-testid="remortgage-" className="flex flex-col items-center py-4">
       {steps.map((step, index) => (
-        <div data-testid="mapped-div"
+        <div data-testid="remortgage-mapped-div"
           key={step.id}
           className={
             seeStep[index]
@@ -29,7 +29,7 @@ export default function NewBuyerTimeline({ steps }) {
         >
           <p className="text-xl">{step.title}</p>
           {seeStep[index] ? (
-            <Step data-testid="step-id"
+            <RemortgageStep data-testid="remortgage-step-id"
               key={step.id}
               title={step.title}
               tasks={step.tasks}
