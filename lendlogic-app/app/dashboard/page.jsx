@@ -1,16 +1,18 @@
 import LearningSection from "./LearningSection";
 import Newsletter from "./Newsletter";
-import RemortgageReport from "./remortgage_components/RemortgageReport";
+import ComparisonTool from "./ComparisonTool";
 import displayUser from "../customHooks/DisplayUser";
+import displayRemortgageSteps from "../customHooks/DisplayRemortgageSteps";
 import displayProperties from "../customHooks/DisplayProperties";
+import displaySteps from "../customHooks/DisplaySteps";
 import NewBuyerReport from "./newbuyer_components/NewBuyerReport";
 import NewbuyerQuiz from "./newbuyer_components/NewbuyerQuiz";
-import RemortgageQuiz from "./remortgage_components/RemortgageQuiz";
-import { cookies } from "next/headers";
 import Checklist from "./newbuyer_components/Checklist";
 import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";
-import displaySteps from "../customHooks/DisplaySteps";
-import ComparisonTool from "./ComparisonTool";
+import RemortgageQuiz from "./remortgage_components/RemortgageQuiz";
+import RemortgageReport from "./remortgage_components/RemortgageReport";
+import RemortgageHomeTimeline from "./remortgage_components/RemortgageHomeTimeline";
+import { cookies } from "next/headers";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -35,6 +37,7 @@ export default async function Dashboard() {
 
   const steps = await displaySteps();
   // console.log("debugging on dashboard page stesp", steps);
+  const remortgageSteps = await displayRemortgageSteps();
 
   return (
     <>
@@ -67,6 +70,7 @@ export default async function Dashboard() {
         <Newsletter />
         {q1 === "a1" && q2 === "a1" ? <Checklist /> : null}
         {q1 === "a1" ? <BuyingHomeTimeline steps={steps} /> : null}
+        {q1 === "a2" ? <RemortgageHomeTimeline steps={remortgageSteps} /> : null}
         {q1 === "a1" ? <NewbuyerQuiz /> : null}
         {q1 === "a2" ? <RemortgageQuiz /> : null}
       </div>
