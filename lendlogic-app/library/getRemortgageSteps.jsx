@@ -1,7 +1,7 @@
 const url = "https://lendlogic-data.onrender.com/"
 
-export default async function getSteps() {
-    try {const res = await fetch(`${url}steps`);
+export default async function getRemortgageSteps() {
+    try {const res = await fetch(`${url}mortgage_steps`);
 
     if(!res.ok){
         throw new Error(`Something went wrong, status: ${res.status}`);
