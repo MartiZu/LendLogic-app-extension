@@ -34,7 +34,6 @@ export default function RemortgageTimeline({ steps }) {
             <RemortgageStep
               // data-testid="remortgage-step-id"
               key={step.id}
-              title={step.title}
               tasks={step.tasks}
               id={step.id}
             />
