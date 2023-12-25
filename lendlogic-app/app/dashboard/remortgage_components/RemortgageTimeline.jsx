@@ -3,23 +3,26 @@ import RemortgageStep from "./RemortgageStep";
 
 export default function RemortgageTimeline({ steps }) {
   console.log("@@@@@", steps);
-  const [seeStep, setSeeStep] = useState(new Array(steps.length).fill(false));
+  const arr = steps;
+  const [seeStep, setSeeStep] = useState(new Array(arr.length).fill(false));
   console.log(seeStep);
 
-  // Toggle visibility when a step is clicked
+  //toggle visibility when a step is clicked
   const handleClick = (index) => {
     //creates a new array newSeeStep that is a copy of the current state array seeStep
     const newSeeStep = [...seeStep];
-    // Toggle the visibility status for the clicked step
+    //toggle the visibility status for the clicked step
     newSeeStep[index] = !newSeeStep[index];
-    // Update the state with the modified seeStep array
+    //update the state with the modified seeStep array
     setSeeStep(newSeeStep);
+    console.log("***", newSeeStep);
   };
 
   return (
-    <div data-testid="remortgage-" className="flex flex-col items-center py-4">
+    <div className="flex flex-col items-center py-4">
       {steps.map((step, index) => (
-        <div data-testid="remortgage-mapped-div"
+        <div
+          // data-testid="remortgage-mapped-div"
           key={step.id}
           className={
             seeStep[index]
@@ -30,7 +33,8 @@ export default function RemortgageTimeline({ steps }) {
         >
           <p className="text-xl">{step.title}</p>
           {seeStep[index] ? (
-            <RemortgageStep data-testid="remortgage-step-id"
+            <RemortgageStep
+              // data-testid="remortgage-step-id"
               key={step.id}
               title={step.title}
               tasks={step.tasks}

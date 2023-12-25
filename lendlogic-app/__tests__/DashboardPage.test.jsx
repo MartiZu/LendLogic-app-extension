@@ -28,6 +28,8 @@ jest.mock("../app/customHooks/DisplayProperties", () =>
 //Mock the DisplaySteps custom hook
 jest.mock("../app/customHooks/DisplaySteps", () => jest.fn().mockResolvedValue([]));
 
+jest.mock("../app/customHooks/displayRemortgageSteps", () => jest.fn().mockResolvedValue([]));
+
 describe("DashboardPage", () => {
   it("renders the dashboard page correctly", async () => {
     //Prerender the dashboard as its an async function

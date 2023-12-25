@@ -17,20 +17,20 @@ export default function MonthlyPaymentTool({ q2, value }) {
   }
   return (
     <div className="mt-8 mx-4 text-center text-2xl">
-      <div className="py-4">
+      <div className="py-2 font-normal text-xl">
         Your new monthly payment could be{" "}
         <span className="text-2xl font-bold text-purple-accent " data-testid="monthlyPayment">
           {monthlyPayment}
         </span>
       </div>
-      <div className="py-4">
+      <div className="py-2 font-normal text-xl">
         Your remaining balance is{" "}
         <span className="text-2xl font-bold text-purple-accent">
           £{loanAmount}
         </span>
       </div>
       <div id="toggles" className="flex flex-col items-center">
-        <label className="py-4" htmlFor="interestRate">
+        <label className="py-2 font-normal text-xl" htmlFor="interestRate">
           Interest Rate: {interestRate}%
         </label>
         <input
@@ -47,7 +47,7 @@ export default function MonthlyPaymentTool({ q2, value }) {
             updateMonthlyPayment();
           }}
         />
-        <label className="py-4" htmlFor="loanTerm">
+        <label className="py-2 font-normal text-xl" htmlFor="loanTerm">
           Loan Term: {loanTerm}
         </label>
         <input

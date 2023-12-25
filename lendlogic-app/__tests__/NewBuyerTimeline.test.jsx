@@ -17,6 +17,6 @@ describe("Test on the NewBuyerTimeline component", () => {
     //get the div with the text Step 1
     expect(screen.getByText("Step 1")).toBeInTheDocument();
     fireEvent.click(screen.getByText("Step 1"));
-    expect(screen.getByTestId("step-test-id")).toBeInTheDocument();
+    expect(screen.getByTestId("step-list-id")).toBeInTheDocument();
   });
 });

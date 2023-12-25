@@ -31,7 +31,7 @@ export default function Newsletter() {
 
   return (
     <main>
-      <div className="mt-12 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
+      <div className="mt-6 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
         <h2 className="font-normal py-7 text-3xl text-purple-accent">
           Sign up for our newsletter
         </h2>

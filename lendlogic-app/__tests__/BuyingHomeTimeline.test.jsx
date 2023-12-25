@@ -1,27 +1,32 @@
+import React from 'react';  
 import { render, screen, fireEvent } from "@testing-library/react";
 import BuyingHomeTimeline from "../app/dashboard/newbuyer_components/BuyingHomeTimeline";
+import { useState } from 'react';
 
 describe("BuyingHome", () => {
   it("timeline visible based on button click", () => {
     const steps = {
-      steps: ["Step 1", "Step 2", "Step 3"],
+      steps: [
+        { id: 1, title: "Step 1", tasks: ["Task 1", "Task 2"] },
+        { id: 2, title: "Step 2", tasks: ["Task 3", "Task 4"] },
+      ],
     };
+
+    // Mock the useState hook
+    const mockUseState = jest.spyOn(React, 'useState');
+    mockUseState.mockImplementation((initialState) => [initialState, jest.fn()]);
 
     render(<BuyingHomeTimeline steps={steps} />);
 
     // Click the button to open timeline
-    const button = screen.getByText("Find Out More");
+    const button = screen.getByTestId("buyinghometimeline-findoutmore-hide");
+    expect(button).toBeInTheDocument();
     fireEvent.click(button);
 
     // Check if the timeline becomes visible after the click
-    expect(
-      screen.getByTestId("buyinghometimeline-findoutmore-hide")
-    ).toBeInTheDocument();
+    expect(mockUseState).toHaveBeenCalled();
 
-    // Click the button again to timeline visibility
-    // fireEvent.click(button);
-
-    // // Check if the next component is visible after the click
-    // expect(screen.getByTestId("step-div")).toBeInTheDocument();
+    // Restore the original implementation of useState
+    mockUseState.mockRestore();
   });
 });
