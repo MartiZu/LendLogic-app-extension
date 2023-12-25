@@ -37,7 +37,7 @@ export default function RemortgageHomeTimeline({ steps }) {
             />
           </div>
         )}
-        <button data-testid="buyinghometimeline-findoutmore-hide"
+        <button data-testid="RemortgageHomeTimeline-findoutmore-hide"
           className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button cursor-pointer"
           type="submit"
           onClick={clickHandler}
