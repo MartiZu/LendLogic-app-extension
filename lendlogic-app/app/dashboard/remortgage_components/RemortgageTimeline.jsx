@@ -2,9 +2,7 @@ import { useState } from "react";
 import RemortgageStep from "./RemortgageStep";
 
 export default function RemortgageTimeline({ steps }) {
-  console.log("@@@@@", steps);
   const [seeStep, setSeeStep] = useState(new Array(steps.length).fill(false));
-  console.log(seeStep);
 
   //toggle visibility when a step is clicked
   const handleClick = (index) => {
@@ -14,7 +12,6 @@ export default function RemortgageTimeline({ steps }) {
     newSeeStep[index] = !newSeeStep[index];
     //update the state with the modified seeStep array
     setSeeStep(newSeeStep);
-    console.log("***", newSeeStep);
   };
 
   return (
