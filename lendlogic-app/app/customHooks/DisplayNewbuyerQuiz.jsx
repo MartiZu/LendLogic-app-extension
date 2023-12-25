@@ -11,6 +11,7 @@ export default async function displayNewbuyerQuiz() {
       // console.log(taskList);
 
       const individualTask = taskList.map((quizQuestion) => {
+        const id = quizQuestion.id;
         const question = quizQuestion.question;
         const answers = quizQuestion.options;
         const correctAnswer = quizQuestion.correct_answer;
@@ -18,7 +19,7 @@ export default async function displayNewbuyerQuiz() {
         // console.log(question);
         // console.log(answers);
         // console.log(correctAnswer);
-        return { question, answers, correctAnswer };
+        return { id, question, answers, correctAnswer };
       });
 
       return { individualTask };

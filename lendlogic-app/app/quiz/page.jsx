@@ -15,7 +15,6 @@ export default async function QuizHomepage() {
   const currentUser = await displayUser(user);
 
   const NBQuiz = await displayNewbuyerQuiz();
-  // console.log("quizlist page", NBQuiz);
 
   return (
     <>
