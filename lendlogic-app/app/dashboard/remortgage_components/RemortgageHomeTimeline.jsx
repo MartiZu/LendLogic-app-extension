@@ -11,7 +11,7 @@ export default function RemortgageHomeTimeline({ steps }) {
   function clickHandler() {
     setToolVisible(!toolVisible);
   }
-  const stepsArr = steps.steps;
+  const stepsArr = steps.remortgageSteps;
 
   const buttonText = toolVisible ? "Hide" : "Find Out More";
   return (

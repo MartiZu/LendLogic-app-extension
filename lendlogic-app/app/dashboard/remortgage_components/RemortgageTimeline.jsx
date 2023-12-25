@@ -2,6 +2,7 @@ import { useState } from "react";
 import RemortgageStep from "./RemortgageStep";
 
 export default function RemortgageTimeline({ steps }) {
+  console.log("@@@@@", steps);
   const [seeStep, setSeeStep] = useState(new Array(steps.length).fill(false));
   console.log(seeStep);
 
