@@ -9,7 +9,7 @@ export default function PreferenceTool({ cookieHandler }) {
   // set state
   const [questionNumber, setQuestionNumber] = useState(1);
 
-  // hold clicked or unclicked in state, that resets on new card
+  // hold clicked or unclicked in state, that resets on new carddescribe
   const [cardVisible, setCardVisible] = useState(true);
   // clicked means slideout class is added
   const router = useRouter();

@@ -9,7 +9,7 @@ export default function Questionnaire() {
   }
   return (
     <main>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center m-auto min-max-width">
         <QuestionnaireContent cookieHandler={setQuestionCookies} />
       </div>
     </main>
