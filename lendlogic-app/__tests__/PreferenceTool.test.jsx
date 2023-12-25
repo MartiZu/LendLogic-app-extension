@@ -1,7 +1,5 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import PreferenceTool from "../app/questionnaire/PreferenceTool";
-import { describe } from "node:test";
-import { headers } from "next/headers";
 
 // Mock the useRouter hook from next/navigation
 jest.mock("next/navigation", () => ({

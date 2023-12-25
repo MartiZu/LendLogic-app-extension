@@ -1,4 +1,3 @@
-import { describe } from "node:test";
 import GetProperties from "../app/customHooks/DisplayProperties";
 import getProperties from "../library/getProperties";
 

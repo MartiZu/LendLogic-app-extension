@@ -3,7 +3,6 @@ import Step from "./Step";
 
 export default function NewBuyerTimeline({ steps }) {
   const [seeStep, setSeeStep] = useState(new Array(steps.length).fill(false));
-  console.log(seeStep);
 
   // Toggle visibility when a step is clicked
   const handleClick = (index) => {
@@ -16,9 +15,10 @@ export default function NewBuyerTimeline({ steps }) {
   };
 
   return (
-    <div data-testid="step-div" className="flex flex-col items-center py-4">
+    <div className="flex flex-col items-center py-4">
       {steps.map((step, index) => (
-        <div data-testid="mapped-div"
+        <div
+          data-testid="mapped-div"
           key={step.id}
           className={
             seeStep[index]
@@ -29,7 +29,7 @@ export default function NewBuyerTimeline({ steps }) {
         >
           <p className="text-xl">{step.title}</p>
           {seeStep[index] ? (
-            <Step data-testid="step-id"
+            <Step
               key={step.id}
               title={step.title}
               tasks={step.tasks}

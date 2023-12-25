@@ -1,4 +1,3 @@
-import { describe } from "node:test";
 import getNewbuyerQuiz from "../library/getNewbuyerQuiz";
 
 const mockQuiz = ["quiz1", "quiz2"];

@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import Home from "../app/page";
-import { describe } from "node:test";
 
 async function resolvedComponent(Component, props) {
   const ComponentResolved = await Component(props);

@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import Dashboard from "../app/dashboard/page";
-import { describe } from "node:test";
 
 //used to prerender a component that is async
 async function resolvedComponent(Component, props) {

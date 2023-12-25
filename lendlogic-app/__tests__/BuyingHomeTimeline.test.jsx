@@ -1,7 +1,6 @@
 import React from 'react';  
 import { render, screen, fireEvent } from "@testing-library/react";
 import BuyingHomeTimeline from "../app/dashboard/newbuyer_components/BuyingHomeTimeline";
-import { useState } from 'react';
 
 describe("BuyingHome", () => {
   it("timeline visible based on button click", () => {

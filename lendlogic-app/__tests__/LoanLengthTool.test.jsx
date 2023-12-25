@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { describe } from "node:test";
 import LoanLengthTool from "../app/dashboard/remortgage_components/LoanLengthTool";
 
 // Mock the custom hook

@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { describe } from "node:test";
 import ReleaseEquityTool from "../app/dashboard/remortgage_components/ReleaseEquityTool";
 
 const updateMonthlyPaymentMock = jest.fn();

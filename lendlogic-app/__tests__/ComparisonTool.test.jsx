@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import ComparisonTool from "../app/dashboard/ComparisonTool";
-import { describe } from "node:test";
 
 describe("Comparison", () => {
   it("looking for heading for comparison tool", () => {

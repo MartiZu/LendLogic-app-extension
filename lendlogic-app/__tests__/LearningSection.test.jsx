@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import LearningSection from "../app/dashboard/LearningSection";
-import { describe } from "node:test";
 
 describe("LearningSection", () => {
   it("looking for heading for LearningSection tool", () => {

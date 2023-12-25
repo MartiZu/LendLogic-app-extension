@@ -1,5 +1,4 @@
 import getProperties from "../library/getProperties";
-import { describe } from "node:test";
 
 const mockProperties = ["property1", "property2"];
 

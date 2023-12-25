@@ -1,4 +1,3 @@
-import { describe } from "node:test";
 import displayNewbuyerQuiz from "../app/customHooks/DisplayNewbuyerQuiz";
 import getNewbuyerQuiz from "../library/getNewbuyerQuiz";
 

@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import NewBuyerReport from "../app/dashboard/newbuyer_components/NewBuyerReport";
-import { describe } from "node:test";
 
 const mockProperties = {
   property: [{ searchPostcode: "AB1", searchValue: 100000 }],

@@ -1,5 +1,4 @@
 import getRemortgageSteps from "../library/getRemortgageSteps";
-import { describe } from "node:test";
 
 const mockSteps = [
   { id: 1, title: "Step 1", tasks: ["Task 1", "Task 2"] },

@@ -1,4 +1,3 @@
-import { describe } from "node:test";
 import displayRemortgageSteps from "../app/customHooks/DisplayRemortgageSteps";
 import getRemortgageSteps from "../library/getRemortgageSteps";
 

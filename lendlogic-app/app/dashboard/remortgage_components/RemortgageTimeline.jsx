@@ -3,8 +3,7 @@ import RemortgageStep from "./RemortgageStep";
 
 export default function RemortgageTimeline({ steps }) {
   console.log("@@@@@", steps);
-  const arr = steps;
-  const [seeStep, setSeeStep] = useState(new Array(arr.length).fill(false));
+  const [seeStep, setSeeStep] = useState(new Array(steps.length).fill(false));
   console.log(seeStep);
 
   //toggle visibility when a step is clicked
@@ -22,7 +21,6 @@ export default function RemortgageTimeline({ steps }) {
     <div className="flex flex-col items-center py-4">
       {steps.map((step, index) => (
         <div
-          // data-testid="remortgage-mapped-div"
           key={step.id}
           className={
             seeStep[index]

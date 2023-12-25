@@ -1,5 +1,4 @@
 import getUsers from "../library/getUsers";
-import { describe } from "node:test";
 
 const mockUsers = ["user1", "user2"];
 

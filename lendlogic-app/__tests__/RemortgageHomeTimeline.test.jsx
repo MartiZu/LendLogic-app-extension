@@ -1,7 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import RemortgageHomeTimeline from "../app/dashboard/remortgage_components/RemortgageHomeTimeline";
 import React from 'react';  
-import { useState } from 'react';
 
 const mockSteps = {
   remortgageSteps: [

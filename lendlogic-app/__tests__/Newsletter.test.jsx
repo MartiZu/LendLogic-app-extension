@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import Newsletter from "../app/dashboard/Newsletter";
-import { describe } from "node:test";
 
 describe("Newsletter", () => {
   describe("Render", () => {
