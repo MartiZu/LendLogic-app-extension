@@ -2,38 +2,26 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function QuizQuestions({
-  id,
-  quiz,
-  onBackClick,
-  selectedTaskIndex,
-}) {
+export default function QuizQuestions({ quiz, onBackClick }) {
   const [selectedAnswer, setSelectedAnswer] = useState(
     new Array(quiz.individualTask.length).fill(null)
   );
-  // const quizList = quiz.NBquiz
-  // console.log("quiz list", quizList);
 
-  const handleAnswerClick = (questionId, answer.id, answer.text) => {
+  const handleAnswerClick = (questionId, answerId, answerText) => {
     const questionIndex = quiz.individualTask.findIndex(
       (question) => question.id === questionId
     );
-  
-    // Check if the clicked answer is correct
+    //check if the clicked answer is correct
     const isCorrect =
-    answer.text === quiz.individualTask[questionIndex].correctAnswer;
-  
-    // Update the selected answer state for the specific task
-    const newSelectedAnswers = [...selectedAnswer];
-  
-    // Update the selected answer state
-    newSelectedAnswers[selectedTaskIndex] = {
-      id: selectedAnswerId,
-      text: selectedAnswerText,
+      answerText === quiz.individualTask[questionIndex].correctAnswer;
+    //reset all answers to null
+    const newSelectedAnswers = new Array(quiz.individualTask.length).fill(null);
+    //update the selected answer state
+    newSelectedAnswers[questionIndex] = {
+      id: answerId,
+      text: answerText,
       status: isCorrect ? "correct" : "incorrect",
     };
-  
-    console.log("New Selected Answers:", newSelectedAnswers);
     setSelectedAnswer(newSelectedAnswers);
   };
   return (
@@ -54,7 +42,6 @@ export default function QuizQuestions({
       </div>
       {quiz.individualTask.map((question, questionIndex) => {
         const questionId = question.id;
-        console.log("question id", questionId);
         return (
           <div
             key={questionIndex}
@@ -68,15 +55,17 @@ export default function QuizQuestions({
                 <li
                   key={answer.id}
                   className={`text-base font-normal text-center p-3 border-2 rounded-xl shadow-button cursor-pointer ${
-                    selectedAnswer[selectedTaskIndex] === "correct" &&
-                    answer === question.correctAnswer
+                    selectedAnswer[questionIndex]?.id === answer.id &&
+                    selectedAnswer[questionIndex]?.status === "correct"
                       ? "bg-green-500 text-off-white"
-                      : selectedAnswer[selectedTaskIndex] === "incorrect" &&
-                        answer !== question.correctAnswer
+                      : selectedAnswer[questionIndex]?.id === answer.id &&
+                        selectedAnswer[questionIndex]?.status === "incorrect"
                       ? "bg-red-500 text-off-white"
                       : "bg-off-white hover:bg-purple-accent hover:text-off-white hover:font-semibold"
                   }`}
-                  onClick={() => handleAnswerClick(questionId, answer.id, answer.text)}
+                  onClick={() =>
+                    handleAnswerClick(questionId, answer.id, answer.text)
+                  }
                 >
                   {answer.text}
                 </li>
