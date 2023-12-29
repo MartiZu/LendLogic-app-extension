@@ -1,7 +1,9 @@
 import displayNewbuyerQuiz from "../customHooks/DisplayNewbuyerQuiz";
+import displayRemortgageQuiz from "../customHooks/DisplayRemortgageQuiz";
 import displayUser from "../customHooks/DisplayUser";
 import { cookies } from "next/headers";
 import NewbuyerQuizList from "./NewbuyerQuizList";
+import RemortgageQuizList from "./RemortgageQuizList";
 
 export default async function QuizHomepage() {
   async function readCookie(cookieName) {
@@ -15,6 +17,8 @@ export default async function QuizHomepage() {
   const currentUser = await displayUser(user);
 
   const NBQuiz = await displayNewbuyerQuiz();
+
+  const RMQuiz = await displayRemortgageQuiz();
 
   return (
     <>
@@ -37,7 +41,7 @@ export default async function QuizHomepage() {
           you wish to test your knowledge.
         </p>
       {q1 === "a1" ? <NewbuyerQuizList quiz={NBQuiz} /> : null}
-      {/* {q1 === "a2" ? <QuizList quiz={RMQuiz} /> : null} */}
+      {q1 === "a2" ? <RemortgageQuizList quiz={RMQuiz} /> : null}
       </div>
       </div>
     </>
