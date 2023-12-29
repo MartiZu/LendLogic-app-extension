@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-export default function QuizQuestions({ quiz, onBackClick }) {
+export default function RemortgageQuizQuestions({ quiz, onBackClick }) {
   const [selectedAnswer, setSelectedAnswer] = useState(
     new Array(quiz.individualTask.length).fill(null)
   );

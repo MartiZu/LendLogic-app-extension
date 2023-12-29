@@ -8,6 +8,7 @@ import displaySteps from "../customHooks/DisplaySteps";
 import NewBuyerReport from "./newbuyer_components/NewBuyerReport";
 import NewbuyerQuiz from "./newbuyer_components/NewbuyerQuiz";
 import Checklist from "./newbuyer_components/Checklist";
+import RemortgageChecklist from "./remortgage_components/RemortgageChecklist";
 import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";
 import RemortgageQuiz from "./remortgage_components/RemortgageQuiz";
 import RemortgageReport from "./remortgage_components/RemortgageReport";
@@ -66,9 +67,9 @@ export default async function Dashboard() {
           <NewBuyerReport value={currentUser} properties={properties} />
         ) : null}
         {q1 === "a4" || q1 === "a3" ? <ComparisonTool /> : null}
-        {q1 === "a2" ? <LearningSection /> : null}
         <Newsletter />
         {q1 === "a1" && q2 === "a1" ? <Checklist /> : null}
+        {q1 === "a2" ? <RemortgageChecklist /> : null}
         {q1 === "a1" ? <BuyingHomeTimeline steps={steps} /> : null}
         {q1 === "a2" ? (
           <RemortgageHomeTimeline steps={remortgageSteps} />

@@ -1,10 +1,11 @@
 "use client";
-import NewbuyerQuizQuestions from "./NewbuyerQuizQuestions";
+import RemortgageQuizQuestions from "./RemortgageQuizQuestions";
 import { useState } from "react";
 
-export default function NewbuyerQuizList({ quiz }) {
-  // console.log("quiz list", quiz);
-  const quizList = quiz.NBquiz;
+export default function RemortgageQuizList({ quiz }) {
+  //   console.log("quiz list", quiz);
+  const quizList = quiz.RMQuiz;
+  //   console.log("quiz list", quizList);
   // console.log("quiz list", quizList);
   // const [questionsVisible, setQuestionsVisible] = useState(false);
   const [selectedTaskIndex, setSelectedTaskIndex] = useState(
@@ -33,7 +34,11 @@ export default function NewbuyerQuizList({ quiz }) {
           }
         >
           {selectedTaskIndex[index] ? (
-            <NewbuyerQuizQuestions quiz={task} onBackClick={handleBackClick} selectedTaskIndex={selectedTaskIndex}/>
+            <RemortgageQuizQuestions
+              quiz={task}
+              onBackClick={handleBackClick}
+              selectedTaskIndex={selectedTaskIndex}
+            />
           ) : (
             <div
               className="w-full cursor-pointer"

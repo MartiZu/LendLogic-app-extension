@@ -1,12 +1,12 @@
-import getNewbuyerQuiz from "@/library/getNewbuyerQuiz";
+import getRemortgageQuiz from "@/library/getRemortgageQuiz";
 
-export default async function displayNewbuyerQuiz() {
+export default async function displayRemortgageQuiz() {
   try {
-    const quizData = await getNewbuyerQuiz();
+    const quizData = await getRemortgageQuiz();
     // console.log(quizData);
 
     // Map through quizData to extract question and answers
-    const NBquiz = quizData.map((task) => {
+    const RMQuiz = quizData.map((task) => {
       const taskList = task.questions;
       // console.log(taskList);
 
@@ -25,12 +25,7 @@ export default async function displayNewbuyerQuiz() {
       return { individualTask };
     });
 
-    // Log the entire answers array
-    // console.log(NBquiz);
-
-    // Return the answers array
-    // console.log(NBquiz[0]);
-    return { NBquiz };
+    return { RMQuiz };
   } catch (error) {
     // Handle errors
     console.error("Error fetching quiz data:", error);

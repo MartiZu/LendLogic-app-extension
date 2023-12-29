@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 
-import Header from '../components/Header'
+import SecondaryHeader from '../components/SecondaryHeader'
 import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -14,7 +14,7 @@ export default function QuizLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
+        <SecondaryHeader />
         {children}
         <Footer />
         </body>
