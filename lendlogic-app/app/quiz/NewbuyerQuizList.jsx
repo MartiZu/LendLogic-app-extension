@@ -2,7 +2,7 @@
 import NewbuyerQuizQuestions from "./NewbuyerQuizQuestions";
 import { useState } from "react";
 
-export default function QuizList({ quiz }) {
+export default function NewbuyerQuizList({ quiz }) {
   // console.log("quiz list", quiz);
   const quizList = quiz.NBquiz;
   // console.log("quiz list", quizList);

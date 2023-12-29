@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
+export default function SecondaryHeader() {
   return (
     <main>
       <header className="flex flex-row justify-between px-5 py-3 items-center">
@@ -17,6 +17,7 @@ export default function Header() {
               className="rounded-2xl"
             />
           </Link>
+          <Link href="/dashboard" className="ml-6 flex flex-col items-center text-purple-accent font-semibold text-base hover:underline">Dashboard</Link>
         </div>
         
         <div className="flex flex-col items-center text-purple-accent font-semibold text-xl">
