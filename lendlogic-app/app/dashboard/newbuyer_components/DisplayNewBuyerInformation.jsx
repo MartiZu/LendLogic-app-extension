@@ -2,14 +2,18 @@
 
 import { useState, useEffect } from "react";
 
-export default function DisplayNewBuyerInformation({ value, deposit, updateDepositValue }) {
+export default function DisplayNewBuyerInformation({
+  value,
+  deposit,
+  updateDepositValue,
+}) {
   // const { salary, property_value, credit_score } = value;
   // console.log(value);
   const [propertyValue, setPropertyValue] = useState(value);
   const [monthlySaving, setMonthlySaving] = useState(500);
   const [years, setYears] = useState(5);
   const [months, setMonths] = useState(0);
- 
+
   // Handle change for the property value input
   const handlePropertyValueChange = (e) => {
     const newValue = e.target.value;
@@ -47,7 +51,7 @@ export default function DisplayNewBuyerInformation({ value, deposit, updateDepos
         </label>
         <input
           id="monthlySaving"
-          className="w-1/2"
+          className="w-1/2 py-2"
           type="range"
           min="100"
           max="1000"
@@ -59,15 +63,17 @@ export default function DisplayNewBuyerInformation({ value, deposit, updateDepos
       <div id="propertyInput" className="flex flex-col items-center">
         <label className="py-2 font-normal text-xl" htmlFor="propertyValue">
           Update the property value:{" "}
-          <span className="text-2xl font-bold text-purple-accent"> £</span>
         </label>
-        <input
-          id="propertyValue"
-          className="border-2 max-w-md border-purple-accent rounded-full w-1/2 h-12 pl-8 text-xl font-semibold shadow-button"
-          type="number"
-          value={propertyValue}
-          onChange={handlePropertyValueChange}
-        />
+        <div className="py-2 flex flex-row items-center justify-center">
+          <p className="text-4xl pr-2 font-bold text-purple-accent">£</p>
+          <input
+            id="propertyValue"
+            className="border-2 max-w-md border-purple-accent rounded-full w-1/2 h-12 pl-8 text-xl font-semibold shadow-button cursor-pointer"
+            type="number"
+            value={propertyValue}
+            onChange={handlePropertyValueChange}
+          />
+        </div>
       </div>
     </div>
   );
