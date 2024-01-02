@@ -28,55 +28,51 @@ export default function ReleaseEquityTool({ q2, value }) {
           £{userMonthlyPayment}{" "}
         </span>
       </p>
-      <p className="py-2 font-normal text-xl">
-        How much would you like to borrow?{" "}
+      <div className="flex flex-col items-center justify-center">
+        <p className="py-2 font-normal text-xl">
+          How much would you like to borrow?{" "}
+        </p>
         <span
           data-testid="equitySpan"
-          className="text-2xl font-bold text-purple-accent"
+          className="pt-2 text-2xl font-bold text-purple-accent"
         >
           £{equity}{" "}
         </span>
-      </p>
-      <label className="py-4" htmlFor="interestRate">
-        £
-      </label>
-      <input
-        data-testid="equityValue"
-        id="interestRate"
-        className="w-1/2"
-        type="range"
-        min="5000"
-        max="200000"
-        step="1000"
-        value={equity}
-        onChange={(e) => {
-          setEquity(e.target.value);
-          updateMonthlyPayment();
-        }}
-      />
-      <p className="py-2 font-normal text-xl">
-        How long would you like to borrow this equity for?{" "}
-        <span className="text-2xl font-bold text-purple-accent">
+        <input
+          data-testid="equityValue"
+          id="interestRate"
+          className="w-1/2 py-2"
+          type="range"
+          min="5000"
+          max="200000"
+          step="1000"
+          value={equity}
+          onChange={(e) => {
+            setEquity(e.target.value);
+            updateMonthlyPayment();
+          }}
+        />
+        <p className="pt-2 font-normal text-xl">
+          How long would you like to borrow this equity for?{" "}
+        </p>
+        <span className="py-2 text-2xl font-bold text-purple-accent">
           {borrowTime} years{" "}
         </span>
-      </p>
-      <label className="py-4" htmlFor="interestRate">
-        £
-      </label>
-      <input
-        data-testid="borrowTime"
-        id="interestRate"
-        className="w-1/2"
-        type="range"
-        min="5"
-        max={30}
-        step="1"
-        value={borrowTime}
-        onChange={(e) => {
-          setBorrowTime(e.target.value);
-          updateMonthlyPayment();
-        }}
-      />
+        <input
+          data-testid="borrowTime"
+          id="interestRate"
+          className="w-1/2"
+          type="range"
+          min="5"
+          max={30}
+          step="1"
+          value={borrowTime}
+          onChange={(e) => {
+            setBorrowTime(e.target.value);
+            updateMonthlyPayment();
+          }}
+        />
+      </div>
     </div>
   );
 }
