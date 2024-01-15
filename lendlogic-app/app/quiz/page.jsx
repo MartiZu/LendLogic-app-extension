@@ -5,6 +5,9 @@ import { cookies } from "next/headers";
 import NewbuyerQuizList from "./NewbuyerQuizList";
 import RemortgageQuizList from "./RemortgageQuizList";
 
+import Link from "next/link";
+import Image from "next/image";
+
 export default async function QuizHomepage() {
   async function readCookie(cookieName) {
     const cookie = cookies().get(cookieName);
@@ -22,6 +25,18 @@ export default async function QuizHomepage() {
 
   return (
     <>
+          <Link href="/questionnaire">
+        <div className="text-purple-accent flex flex-row pl-2 pt-2">
+          <Image
+            src="/arrow_back_ios.svg"
+            width={20}
+            height={20}
+            alt="Back icon"
+            priority={true}
+          />
+          <h1>Back to Dashboard</h1>
+        </div>
+      </Link>
       <div className="flex flex-col my-8 rounded-3xl text-center text-2xl m-auto min-max-width">
         <h1 className="font-normal pt-7 text-3xl text-purple-accent">
           We want you to succeed!

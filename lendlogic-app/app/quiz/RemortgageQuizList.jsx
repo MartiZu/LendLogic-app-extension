@@ -3,9 +3,9 @@ import RemortgageQuizQuestions from "./RemortgageQuizQuestions";
 import { useState } from "react";
 
 export default function RemortgageQuizList({ quiz }) {
-  //   console.log("quiz list", quiz);
+    console.log("quiz list", quiz);
   const quizList = quiz.RMQuiz;
-  //   console.log("quiz list", quizList);
+    console.log("quiz list", quizList);
   // console.log("quiz list", quizList);
   // const [questionsVisible, setQuestionsVisible] = useState(false);
   const [selectedTaskIndex, setSelectedTaskIndex] = useState(
@@ -45,6 +45,7 @@ export default function RemortgageQuizList({ quiz }) {
               onClick={() => clickHandler(index)}
             >
               <p className="text-xl">Task {index + 1}</p>
+              <p className="text-xl">{task.task}</p>
             </div>
           )}
         </div>

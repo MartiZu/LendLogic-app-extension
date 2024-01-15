@@ -6,6 +6,8 @@ export default function RemortgageQuizQuestions({ quiz, onBackClick }) {
     new Array(quiz.individualTask.length).fill(null)
   );
 
+  console.log("quiz questions", quiz);
+
   const handleAnswerClick = (questionId, answerId, answerText) => {
     const questionIndex = quiz.individualTask.findIndex(
       (question) => question.id === questionId

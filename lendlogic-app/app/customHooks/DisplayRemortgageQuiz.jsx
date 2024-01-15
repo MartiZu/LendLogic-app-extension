@@ -8,6 +8,7 @@ export default async function displayRemortgageQuiz() {
     // Map through quizData to extract question and answers
     const RMQuiz = quizData.map((task) => {
       const taskList = task.questions;
+      const taskName = task.task;
       // console.log(taskList);
 
       const individualTask = taskList.map((quizQuestion) => {
