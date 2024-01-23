@@ -5,7 +5,7 @@ export default function ReleaseEquityTool({ q2, value }) {
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
     value;
 
-  const [equity, setEquity] = useState(200000 - loanAmount);
+  const [equity, setEquity] = useState(500000 - loanAmount);
   const [borrowTime, setBorrowTime] = useState(20);
   const [monthlyEquityPayment, setMonthlyEquityPayment] = useState(0);
 
@@ -44,7 +44,7 @@ export default function ReleaseEquityTool({ q2, value }) {
           className="w-1/2 py-2"
           type="range"
           min="5000"
-          max="200000"
+          max="500000"
           step="1000"
           value={equity}
           onChange={(e) => {
