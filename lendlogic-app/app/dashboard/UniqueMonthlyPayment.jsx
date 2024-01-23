@@ -1,12 +1,13 @@
-import React from "react";
-import { useState } from "react";
+// import React from "react";
+// import { useState } from "react";
 
 const UniqueMonthlyPayment = ({ q2, value }) => {
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate, mortgageType } =
     value;
   // const mortgageType = "Fixed";
-  const [newLoanLength, setNewLoanLength] = useState(loanLength);
-  const remainingPayment = 200000 - loanAmount;  // function updateLoanLength(){
+  // const [newLoanLength, setNewLoanLength] = useState(loanLength);
+  // const remainingPayment = 200000 - loanAmount;  
+  // function updateLoanLength(){
 
   //   setNewLoanLength(loanLength)
   // }
@@ -20,7 +21,7 @@ const UniqueMonthlyPayment = ({ q2, value }) => {
         {q2 === "a1" ? `${loanLength} years` : null}
         {q2 === "a2" ? `£${userMonthlyPayment}` : null}
         {q2 === "a3" ? `${mortgageType}` : null}
-        {q2 === "a4" ? `£${remainingPayment}` : null}
+        {q2 === "a4" ? `£${loanAmount}` : null}
       </span>
     </p>
   );
