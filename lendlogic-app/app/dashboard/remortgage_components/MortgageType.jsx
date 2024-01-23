@@ -33,14 +33,18 @@ export default function MortageType({ value, q2 }) {
       const totalMonthsRemaining = remainingYears * 12 + remainingMonths;
 
       //calculate Early Repayment Charge based on the percentage the user had entered
-      let newCharge =
-        Math.floor((percentage / 100) * loanAmount * totalMonthsRemaining) / 12;
+      let newCharge = Math.floor(
+        ((percentage / 100) * loanAmount * totalMonthsRemaining) / 12
+      );
+      console.log(newCharge);
+      //set earlyRepaymentCharge
+      setEarlyRepaymentCharge(newCharge);
       //calculate savings based on userInterestRate for the same period
-      let newSavings =
-        Math.floor(
-          (userInterestRate / 100) * loanAmount * totalMonthsRemaining
-        ) / 12;
+      let newSavings = Math.floor(
+        ((userInterestRate / 100) * loanAmount * totalMonthsRemaining) / 12
+      );
       //set savings
+      console.log(newSavings);
       setSavings(newSavings);
       //display payment required to change mortgage type and savings
       setPopUp(true);
@@ -141,7 +145,6 @@ export default function MortageType({ value, q2 }) {
             <span className="text-2xl font-bold text-purple-accent">
               £{savings}
             </span>
-            .
           </p>
         ) : null}
       </div>
