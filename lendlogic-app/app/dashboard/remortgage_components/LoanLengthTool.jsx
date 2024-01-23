@@ -13,7 +13,8 @@ export default function LoanLengthTool({ q2, value }) {
   const [lumpSum, setLumpSum] = useState(0);
 
   function updateMonthlyPayment() {
-    let newMonthlyPayment = (totalAmount / (loanTerm * 12)) * interestRate;
+    let newMonthlyPayment = totalAmount / (loanTerm * 12);
+    console.log(newMonthlyPayment);
     setMonthlyPayment(Math.ceil(newMonthlyPayment));
     // console.log(monthlyPayment);
   }
@@ -21,14 +22,14 @@ export default function LoanLengthTool({ q2, value }) {
   const handleLoanValueChange = (e) => {
     const newValue = totalAmount - lumpSum;
     setTotalAmount(newValue);
-    updateMonthlyPayment();
+    setMonthlyPayment(Math.ceil(newValue / (loanTerm * 12)));
     //reset input
     setLumpSum(0);
   };
   return (
     <div className="mt-8 mx-4 text-center text-2xl">
       <p className="py-4 font-normal text-xl">
-        If can chose to shorten your loan term, your monhtly payment may
+        If you chose to shorten your loan term, your monhtly payment may
         increase. Another way is making an extra payment each month or as a lump
         sum, reducing your balance.
       </p>
@@ -55,9 +56,9 @@ export default function LoanLengthTool({ q2, value }) {
           id="loanTerm"
           className="w-1/2"
           type="range"
-          min="5"
+          min="0"
           max="25"
-          step="1"
+          step="1.5"
           value={loanTerm}
           onChange={(e) => {
             setLoanTerm(e.target.value);
