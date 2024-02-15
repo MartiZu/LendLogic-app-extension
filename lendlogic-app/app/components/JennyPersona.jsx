@@ -3,7 +3,7 @@ export default function JennyPersona({ handleNext }) {
     <>
       <div className="mt-32 mb-4 mx-4 bg-off-white rounded-3xl p-6 shadow-card text-center text-2xl min-max-width">
         <p>
-          Let me introduce Jenny, one of our user personas, the essence of our
+          Let me introduce Jenny, one of our user personas, the essence of this
           project. Jenny is 62 and she is close to paying off her mortgage.
           However, she is exploring remortageging options like releasing equity
           to help her daughter step onto the property ladder.

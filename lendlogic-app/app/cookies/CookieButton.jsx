@@ -7,7 +7,6 @@ import KatPersona from "../components/KatPersona";
 export function CookieButton({ setCookie, user }) {
   const [JennyMessage, setJennyMessage] = useState(false);
   const [KatMessage, setKatMessage] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
   const router = useRouter();
   const setAndPush = () => {
