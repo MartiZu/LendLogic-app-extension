@@ -11,26 +11,38 @@ export default function PreferenceTool({ cookieHandler }) {
 
   // hold clicked or unclicked in state, that resets on new carddescribe
   const [cardVisible, setCardVisible] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
   // clicked means slideout class is added
   const router = useRouter();
 
   // handledClick on input
   const handleClick = (e, num, qNum, aNum) => {
     e.preventDefault();
-    cookieHandler(qNum, aNum);
-    if (num === 99) {
+
+    const handlePromise = cookieHandler(qNum, aNum)
+      .then(() => {
+        if (num === 99) {
+          setTimeout(() => {
+            router.push("/dashboard");
+          }, 1000);
+        }
+      })
+      .catch((error) => {
+        setErrorMessage(
+          "An error occurred. Please try again or refresh the page."
+        );
+      });
+
+    handlePromise.then(() => {
+      // update the class names
+      setCardVisible(false);
+      // set a delay of animation length
       setTimeout(() => {
-        router.push("/dashboard");
-      }, 1000);
-    }
-    // update the class names
-    setCardVisible(false);
-    // set a delay of animation length
-    setTimeout(() => {
-      setQuestionNumber(num);
-      setCardVisible(true);
-    }, 200);
-    // update state/number when clicking on input and sends to another question based on number set in onClick function.
+        setQuestionNumber(num);
+        setCardVisible(true);
+      }, 200);
+      // update state/number when clicking on input and sends to another question based on number set in onClick function.
+    });
   };
   return (
     <section>
